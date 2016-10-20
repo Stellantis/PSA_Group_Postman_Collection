@@ -1,0 +1,1853 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PSA Group Connected Car API",
+		"_postman_id": "5ed988cb-3d46-4b40-1195-a745fda51eb6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crash",
+			"description": "",
+			"item": [
+				{
+					"name": "get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var schema = {\n \"items\": {\n \"type\": \"boolean\"\n }\n};\nvar data1 = [true, false];\nvar data2 = [true, 123];\n\nconsole.log(tv4.error);\ntests[\"Valid Data1\"] = tv4.validate(data1, schema);\ntests[\"Valid Data2\"] = tv4.validate(data2, schema);"
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/crash/get/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"crash",
+								"get",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/crash/list?client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/crash/search/:vin?contract={{CONTRAT}}&from=&to=&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"crash",
+								"search",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "from",
+									"value": ""
+								},
+								{
+									"key": "to",
+									"value": ""
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ecodriving",
+			"description": "",
+			"item": [
+				{
+					"name": "daytrips",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/daytrips/:vin?contract={{CONTRAT}}&day=20160910&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"daytrips",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "day",
+									"value": "20160910"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/get/:vin?contract={{CONTRAT}}&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"get",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "lasttrip",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/lasttrip/:vin?contract={{CONTRAT}}&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"lasttrip",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/ecodriving/evaluation/list?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"vin1\",\r\n      \"vin2\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"contract1\",\r\n      \"contract2\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "pertrip",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/pertrip/:vin/:tripid?contract={{CONTRAT}}&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"pertrip",
+								":vin",
+								":tripid"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								},
+								{
+									"value": "1423865",
+									"id": "tripid"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "//content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"VF73AAHXTFJ807314\",\r\n      \"VF73ABHZTFJ775283\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"620324101\",\r\n      \"620269801\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "trip/day/list",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/ecodriving/evaluation/trip/day/list?fromday=20160910&locale={{LOCAL}}&brand={{BRAND}}&today=20160911&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "trip/day",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/trip/day/:vin?contract={{CONTRAT}}&fromday=20160910&today=20160911&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"trip",
+								"day",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "fromday",
+									"value": "20160910"
+								},
+								{
+									"key": "today",
+									"value": "20160911"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "trip/month/list",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/ecodriving/evaluation/trip/month/list?frommonth=201609&locale={{LOCAL}}&brand={{BRAND}}&tomonth=201609&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "trip/month",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/ecodriving/evaluation/trip/month/:vin?contract={{CONTRAT}}&frommonth=201609&tomonth=201609&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"ecodriving",
+								"evaluation",
+								"trip",
+								"month",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "frommonth",
+									"value": "201609"
+								},
+								{
+									"key": "tomonth",
+									"value": "201609"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Environment",
+			"description": "",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/environment/get/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"environment",
+								"get",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/environment/list?listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Maintenance",
+			"description": "",
+			"item": [
+				{
+					"name": "alert",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/maintenance/alert/:vin?contract={{CONTRAT}}&active=0&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"maintenance",
+								"alert",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "active",
+									"value": "0"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "//content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"VF73AAHXTFJ807314\",\r\n      \"VF73ABHZTFJ775283\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"620324101\",\r\n      \"620269801\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/maintenance/:vin?contract={{CONTRAT}}&locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"maintenance",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "locale",
+									"value": "{{LOCAL}}"
+								},
+								{
+									"key": "brand",
+									"value": "{{BRAND}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "//content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"VF73AAHXTFJ807314\",\r\n      \"VF73ABHZTFJ775283\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"620324101\",\r\n      \"620269801\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/maintenance/list?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list/alert",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/maintenance/list/alert?locale={{LOCAL}}&brand={{BRAND}}&active=0&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Place",
+			"description": "",
+			"item": [
+				{
+					"name": "lastposition",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/place/lastposition/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&near={{NEAR}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"place",
+								"lastposition",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "near",
+									"value": "{{NEAR}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "positions/trip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var schema= {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"object\",\n                                \"properties\": {\n                                    \"latitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"longitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"altitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"nbsat\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"source\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"vin\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"lastUpdate\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"contract\": {\n                                        \"type\": \"string\"\n                                    }\n                                }\n                            }\n                        };\n\n\nconsole.log(tv4.error);\nvar data = JSON.parse(responseBody);\ntests[\"Valid Data\"] = tv4.validate(data, schema);\ntests[\"Response time is less than 200ms\"] = responseTime < 200;"
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/place/positions/trip/:vin?contract={{CONTRAT}}&tripid=1423865&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&near={{NEAR}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"place",
+								"positions",
+								"trip",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "tripid",
+									"value": "1423865"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50"
+								},
+								{
+									"key": "near",
+									"value": "{{NEAR}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Referential",
+			"description": "",
+			"item": [
+				{
+					"name": "maintenance",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/referential/maintenance?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "alerte",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/referential/alert?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ecodriving",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/referential/ecodriving?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Running ",
+			"description": "",
+			"item": [
+				{
+					"name": "data",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/running/data/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"running",
+								"data",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "//content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"VF73AAHXTFJ807314\",\r\n      \"VF73ABHZTFJ775283\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"620324101\",\r\n      \"620269801\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "data/lightstatus",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/running/data/lightstatus/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"running",
+								"data",
+								"lightstatus",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "//content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listvin\": [\r\n      \"VF73AAHXTFJ807314\",\r\n      \"VF73ABHZTFJ775283\"\r\n   ],\r\n   \"listcontract\": [\r\n      \"620324101\",\r\n      \"620269801\"\r\n   ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/running/list?listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "lightstatus/list",
+					"request": {
+						"url": "https://{{BASE_URL}}/1.0/running/lightstatus/list?listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Safety",
+			"description": "",
+			"item": [
+				{
+					"name": "drivingassistance",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/safety/drivingassistance/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"safety",
+								"drivingassistance",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "safetyassistance",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/safety/safetyassistance/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"safety",
+								"safetyassistance",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "drivingassistance/day",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/safety/drivingassistance/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}&day=20160910",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"safety",
+								"drivingassistance",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "day",
+									"value": "20160910"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "safetyassistance/day",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/safety/safetyassistance/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&client_id={{CLIENT_ID}}&day=20160910",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"safety",
+								"safetyassistance",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "listsecond",
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "day",
+									"value": "20160910"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trip",
+			"description": "",
+			"item": [
+				{
+					"name": "last",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/last/:vin?contract={{CONTRAT}}&limit={{LIMIT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"last",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}"
+								},
+								{
+									"key": "unit",
+									"value": "{{UNIT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/id/:vin/:trip_id?contract={{CONTRAT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"id",
+								":vin",
+								":trip_id"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "unit",
+									"value": "{{UNIT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								},
+								{
+									"value": "591666",
+									"id": "trip_id"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"url": " https://{{BASE_URL}}/1.0/trip/list?limit={{LIMIT}}&to=20160911&unit={{UNIT}}&from=20160910&client_id={{CLIENT_ID}}",
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{BODY}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "period",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/period/:vin?contract={{CONTRAT}}&from=20160910&to=20160911&limit={{LIMIT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"period",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "from",
+									"value": "20160910"
+								},
+								{
+									"key": "to",
+									"value": "20160911"
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}"
+								},
+								{
+									"key": "unit",
+									"value": "{{UNIT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "reference/fuelprice",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/reference/fuelprice/:vin?contract={{CONTRAT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"reference",
+								"fuelprice",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "referencetrip",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/referencetrip/:vin?contract={{CONTRAT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"referencetrip",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "unit",
+									"value": "{{UNIT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update/fuelprice",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/update/fuelprice/:vin/:tripid?price={{FUEL_PRICE}}&contract={{CONTRAT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"update",
+								"fuelprice",
+								":vin",
+								":tripid"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "{{FUEL_PRICE}}"
+								},
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								},
+								{
+									"value": "1423865",
+									"id": "tripid"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update/reference/fuelprice",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/update/reference/fuelprice/:vin?price={{FUEL_PRICE}}&contract={{CONTRAT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"update",
+								"reference",
+								"fuelprice",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "{{FUEL_PRICE}}"
+								},
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update/referencetrip",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/trip/update/referencetrip/:vin?contract={{CONTRAT}}&tripid=1423865&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"trip",
+								"update",
+								"referencetrip",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contract",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "tripid",
+									"value": "1423865"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicule",
+			"description": "",
+			"item": [
+				{
+					"name": "information",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var schema = {\n    \"type\": \"object\",\n    \"properties\" : {\n        \"color\" : {\n            \"type\": \"string\"\n        },\n  \"cod_fin\": {\n            \"type\": \"string\"\n        },\n  \"cod_sil\": {\n            \"type\": \"string\"\n        },\n  \"cod_ccn\": {\n            \"type\": \"string\"\n        },\n  \"cod_log\": {\n            \"type\": \"number\"\n        },\n  \"lcdv\": {\n            \"type\": \"string\"\n        },\n  \"vis\": {\n            \"type\": \"string\"\n        },\n  \"imei\": {\n            \"type\": \"string\"\n        },\n  \"deliveryDate\": {\n            \"type\": \"string\"\n        },\n  \"manufacturingDate\": {\n            \"type\": \"string\"\n        },\n  \"cod_acc\": {\n            \"type\": \"string\"\n        },\n  \"cod_eng\": {\n            \"type\": \"string\"\n        },\n  \"cod_fam\": {\n            \"type\": \"string\"\n        },\n  \"flagSual\":{\n            \"type\": \"number\"\n        },\n  \"brand\": {\n            \"type\": \"string\"\n        },\n  \"design\": {\n            \"type\": \"string\"\n        },\n  \"vehLiv\": {\n            \"type\": \"string\"\n        },\n  \"vin\": {\n            \"type\": \"string\"\n        }\n    }\n};\n\nconsole.log(tv4.error);\nvar data = JSON.parse(responseBody);\ntests[\"Valid Data\"] = tv4.validate(data, schema);\ntests[\"Response time is less than 200ms\"] = responseTime < 200;"
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/vehicle/information/:vin?contrat={{CONTRAT}}&client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"vehicle",
+								"information",
+								":vin"
+							],
+							"query": [
+								{
+									"key": "contrat",
+									"value": "{{CONTRAT}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "picture",
+					"request": {
+						"url": {
+							"raw": "https://{{BASE_URL}}/1.0/vehicle/picture/:vin/:contract?client_id={{CLIENT_ID}}",
+							"protocol": "https",
+							"auth": {},
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"1.0",
+								"vehicle",
+								"picture",
+								":vin",
+								":contract"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								}
+							],
+							"variable": [
+								{
+									"value": "{{VIN}}",
+									"id": "vin"
+								},
+								{
+									"value": "{{CONTRAT}}",
+									"id": "contract"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"width\": 100,\r\n  \"format\": \"1\",\r\n  \"background\": \"1\",\r\n  \"trim\": \"1\",\r\n  \"view\": \"1\",\r\n  \"ratio\": \"1\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
