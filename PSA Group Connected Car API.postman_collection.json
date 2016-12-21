@@ -18,7 +18,19 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var schema = {\n \"items\": {\n \"type\": \"boolean\"\n }\n};\nvar data1 = [true, false];\nvar data2 = [true, 123];\n\nconsole.log(tv4.error);\ntests[\"Valid Data1\"] = tv4.validate(data1, schema);\ntests[\"Valid Data2\"] = tv4.validate(data2, schema);"
+								"exec": [
+									"var schema = {",
+									" \"items\": {",
+									" \"type\": \"boolean\"",
+									" }",
+									"};",
+									"var data1 = [true, false];",
+									"var data2 = [true, 123];",
+									"",
+									"console.log(tv4.error);",
+									"tests[\"Valid Data1\"] = tv4.validate(data1, schema);",
+									"tests[\"Valid Data2\"] = tv4.validate(data2, schema);"
+								]
 							}
 						}
 					],
@@ -59,10 +71,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -130,10 +139,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -192,10 +198,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -244,10 +247,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -296,10 +296,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -376,7 +373,8 @@
 							{
 								"key": "//content-type",
 								"value": "application/json",
-								"description": ""
+								"description": "",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -460,10 +458,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -541,10 +536,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -594,10 +586,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -678,7 +667,8 @@
 							{
 								"key": "//content-type",
 								"value": "application/json",
-								"description": ""
+								"description": "",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -734,7 +724,8 @@
 							{
 								"key": "//content-type",
 								"value": "application/json",
-								"description": ""
+								"description": "",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -795,7 +786,7 @@
 					"name": "lastposition",
 					"request": {
 						"url": {
-							"raw": "https://{{BASE_URL}}/1.0/place/lastposition/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&near={{NEAR}}&client_id={{CLIENT_ID}}",
+							"raw": "https://{{BASE_URL}}/1.0/place/lastposition/:vin?contract={{CONTRAT}}&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20&near={{NEAR}}&client_id={{CLIENT_ID}}",
 							"protocol": "https",
 							"auth": {},
 							"host": [
@@ -814,7 +805,7 @@
 								},
 								{
 									"key": "listsecond",
-									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60"
+									"value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
 								},
 								{
 									"key": "near",
@@ -834,10 +825,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -849,13 +837,212 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var schema= {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"object\",\n                                \"properties\": {\n                                    \"latitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"longitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"altitude\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"nbsat\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"source\": {\n                                        \"type\": \"object\",\n                                        \"properties\": {\n                                            \"6\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"12\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"18\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"24\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"30\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"36\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"42\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"48\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"54\": {\n                                                \"type\": \"string\"\n                                            },\n                                            \"60\": {\n                                                \"type\": \"string\"\n                                            }\n                                        }\n                                    },\n                                    \"vin\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"lastUpdate\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"contract\": {\n                                        \"type\": \"string\"\n                                    }\n                                }\n                            }\n                        };\n\n\nconsole.log(tv4.error);\nvar data = JSON.parse(responseBody);\ntests[\"Valid Data\"] = tv4.validate(data, schema);\ntests[\"Response time is less than 200ms\"] = responseTime < 200;"
+								"exec": [
+									"var schema= {",
+									"                            \"type\": \"array\",",
+									"                            \"items\": {",
+									"                                \"type\": \"object\",",
+									"                                \"properties\": {",
+									"                                    \"latitude\": {",
+									"                                        \"type\": \"object\",",
+									"                                        \"properties\": {",
+									"                                            \"6\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"12\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"18\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"24\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"30\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"36\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"42\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"48\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"54\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"60\": {",
+									"                                                \"type\": \"string\"",
+									"                                            }",
+									"                                        }",
+									"                                    },",
+									"                                    \"longitude\": {",
+									"                                        \"type\": \"object\",",
+									"                                        \"properties\": {",
+									"                                            \"6\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"12\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"18\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"24\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"30\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"36\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"42\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"48\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"54\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"60\": {",
+									"                                                \"type\": \"string\"",
+									"                                            }",
+									"                                        }",
+									"                                    },",
+									"                                    \"altitude\": {",
+									"                                        \"type\": \"object\",",
+									"                                        \"properties\": {",
+									"                                            \"6\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"12\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"18\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"24\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"30\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"36\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"42\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"48\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"54\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"60\": {",
+									"                                                \"type\": \"string\"",
+									"                                            }",
+									"                                        }",
+									"                                    },",
+									"                                    \"nbsat\": {",
+									"                                        \"type\": \"object\",",
+									"                                        \"properties\": {",
+									"                                            \"6\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"12\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"18\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"24\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"30\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"36\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"42\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"48\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"54\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"60\": {",
+									"                                                \"type\": \"string\"",
+									"                                            }",
+									"                                        }",
+									"                                    },",
+									"                                    \"source\": {",
+									"                                        \"type\": \"object\",",
+									"                                        \"properties\": {",
+									"                                            \"6\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"12\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"18\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"24\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"30\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"36\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"42\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"48\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"54\": {",
+									"                                                \"type\": \"string\"",
+									"                                            },",
+									"                                            \"60\": {",
+									"                                                \"type\": \"string\"",
+									"                                            }",
+									"                                        }",
+									"                                    },",
+									"                                    \"vin\": {",
+									"                                        \"type\": \"string\"",
+									"                                    },",
+									"                                    \"lastUpdate\": {",
+									"                                        \"type\": \"string\"",
+									"                                    },",
+									"                                    \"contract\": {",
+									"                                        \"type\": \"string\"",
+									"                                    }",
+									"                                }",
+									"                            }",
+									"                        };",
+									"",
+									"",
+									"console.log(tv4.error);",
+									"var data = JSON.parse(responseBody);",
+									"tests[\"Valid Data\"] = tv4.validate(data, schema);",
+									"tests[\"Response time is less than 200ms\"] = responseTime < 200;"
+								]
 							}
 						}
 					],
 					"request": {
 						"url": {
-							"raw": "https://{{BASE_URL}}/1.0/place/positions/trip/:vin?contract={{CONTRAT}}&tripid=1423865&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60&near={{NEAR}}&client_id={{CLIENT_ID}}",
+							"raw": "https://{{BASE_URL}}/1.0/place/positions/trip/:vin?contract={{CONTRAT}}&tripid=1423865&listsecond=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50&near={{NEAR}}&client_id={{CLIENT_ID}}",
 							"protocol": "https",
 							"auth": {},
 							"host": [
@@ -899,10 +1086,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -919,10 +1103,7 @@
 						"url": "https://{{BASE_URL}}/1.0/referential/maintenance?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -933,10 +1114,7 @@
 						"url": "https://{{BASE_URL}}/1.0/referential/alert?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -947,10 +1125,7 @@
 						"url": "https://{{BASE_URL}}/1.0/referential/ecodriving?locale={{LOCAL}}&brand={{BRAND}}&client_id={{CLIENT_ID}}",
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1003,7 +1178,8 @@
 							{
 								"key": "//content-type",
 								"value": "application/json",
-								"description": ""
+								"description": "",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -1057,7 +1233,8 @@
 							{
 								"key": "//content-type",
 								"value": "application/json",
-								"description": ""
+								"description": "",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -1153,10 +1330,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1200,10 +1374,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1251,10 +1422,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1302,10 +1470,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1359,10 +1524,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1411,10 +1573,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1490,10 +1649,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1502,7 +1658,7 @@
 					"name": "reference/fuelprice",
 					"request": {
 						"url": {
-							"raw": "https://{{BASE_URL}}/1.0/trip/reference/fuelprice/:vin?contract={{CONTRAT}}&client_id={{CLIENT_ID}}",
+							"raw": "https://{{BASE_URL}}/1.0/trip/get/reference/fuelprice/:vin?contract={{CONTRAT}}&client_id={{CLIENT_ID}}",
 							"protocol": "https",
 							"auth": {},
 							"host": [
@@ -1511,6 +1667,7 @@
 							"path": [
 								"1.0",
 								"trip",
+								"get",
 								"reference",
 								"fuelprice",
 								":vin"
@@ -1534,10 +1691,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1546,7 +1700,7 @@
 					"name": "referencetrip",
 					"request": {
 						"url": {
-							"raw": "https://{{BASE_URL}}/1.0/trip/referencetrip/:vin?contract={{CONTRAT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
+							"raw": "https://{{BASE_URL}}/1.0/trip/get/referencetrip/:vin?contract={{CONTRAT}}&unit={{UNIT}}&client_id={{CLIENT_ID}}",
 							"protocol": "https",
 							"auth": {},
 							"host": [
@@ -1555,6 +1709,7 @@
 							"path": [
 								"1.0",
 								"trip",
+								"get",
 								"referencetrip",
 								":vin"
 							],
@@ -1581,10 +1736,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1634,10 +1786,7 @@
 						},
 						"method": "PUT",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1683,10 +1832,7 @@
 						},
 						"method": "PUT",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1731,10 +1877,7 @@
 						},
 						"method": "PUT",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
@@ -1752,7 +1895,72 @@
 							"listen": "test",
 							"script": {
 								"type": "text/javascript",
-								"exec": "var schema = {\n    \"type\": \"object\",\n    \"properties\" : {\n        \"color\" : {\n            \"type\": \"string\"\n        },\n  \"cod_fin\": {\n            \"type\": \"string\"\n        },\n  \"cod_sil\": {\n            \"type\": \"string\"\n        },\n  \"cod_ccn\": {\n            \"type\": \"string\"\n        },\n  \"cod_log\": {\n            \"type\": \"number\"\n        },\n  \"lcdv\": {\n            \"type\": \"string\"\n        },\n  \"vis\": {\n            \"type\": \"string\"\n        },\n  \"imei\": {\n            \"type\": \"string\"\n        },\n  \"deliveryDate\": {\n            \"type\": \"string\"\n        },\n  \"manufacturingDate\": {\n            \"type\": \"string\"\n        },\n  \"cod_acc\": {\n            \"type\": \"string\"\n        },\n  \"cod_eng\": {\n            \"type\": \"string\"\n        },\n  \"cod_fam\": {\n            \"type\": \"string\"\n        },\n  \"flagSual\":{\n            \"type\": \"number\"\n        },\n  \"brand\": {\n            \"type\": \"string\"\n        },\n  \"design\": {\n            \"type\": \"string\"\n        },\n  \"vehLiv\": {\n            \"type\": \"string\"\n        },\n  \"vin\": {\n            \"type\": \"string\"\n        }\n    }\n};\n\nconsole.log(tv4.error);\nvar data = JSON.parse(responseBody);\ntests[\"Valid Data\"] = tv4.validate(data, schema);\ntests[\"Response time is less than 200ms\"] = responseTime < 200;"
+								"exec": [
+									"var schema = {",
+									"    \"type\": \"object\",",
+									"    \"properties\" : {",
+									"        \"color\" : {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_fin\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_sil\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_ccn\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_log\": {",
+									"            \"type\": \"number\"",
+									"        },",
+									"  \"lcdv\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"vis\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"imei\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"deliveryDate\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"manufacturingDate\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_acc\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_eng\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"cod_fam\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"flagSual\":{",
+									"            \"type\": \"number\"",
+									"        },",
+									"  \"brand\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"design\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"vehLiv\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"  \"vin\": {",
+									"            \"type\": \"string\"",
+									"        }",
+									"    }",
+									"};",
+									"",
+									"console.log(tv4.error);",
+									"var data = JSON.parse(responseBody);",
+									"tests[\"Valid Data\"] = tv4.validate(data, schema);",
+									"tests[\"Response time is less than 200ms\"] = responseTime < 200;"
+								]
 							}
 						}
 					],
@@ -1789,10 +1997,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": ""
 					},
 					"response": []
