@@ -5,8 +5,8 @@ Postman Collection for PSA Group API
 
 ## Installation
 
- Install postman and import collection and environment.
- Don't forget to set you client_id in the environment.
+ [Install postman](https://www.getpostman.com/) and [import](https://www.getpostman.com/docs/collections) __collection__ and __environment__.
+ Don't forget to set your `client_id` in the environment.
 
 ## Troubleshooting:
 
